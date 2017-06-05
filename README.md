@@ -1,6 +1,12 @@
 # spring-boot-jbehave
 
-## Spring Boot 1.3.0.RELEASE, JBehave 4.0.4, Gradle 2.4, Maven 3.5.0
+## Versions Used:
+```
+Spring Boot 1.5.3.RELEASE
+JBehave 4.0.4
+Gradle 3.1
+Maven 3.5.0
+```
 
 Example project combining Spring Boot and JBehave for Integration Testing.
 
