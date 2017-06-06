@@ -1,6 +1,7 @@
 package com.github.reeda.springbootjbehave;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -9,6 +10,7 @@ import org.jbehave.core.io.CodeLocations;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.io.StoryFinder;
 import org.jbehave.core.junit.JUnitStories;
+import org.jbehave.core.model.TableTransformers;
 import org.jbehave.core.parsers.gherkin.GherkinStoryParser;
 import org.jbehave.core.reporters.CrossReference;
 import org.jbehave.core.reporters.Format;
@@ -16,6 +18,7 @@ import org.jbehave.core.reporters.PrintStreamStepdocReporter;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.ParameterConverters;
+import org.jbehave.core.steps.ParameterConverters.ParameterConverter;
 import org.jbehave.core.steps.SilentStepMonitor;
 import org.jbehave.core.steps.spring.SpringStepsFactory;
 import org.junit.runner.RunWith;
@@ -50,7 +53,7 @@ public class TestRunnerTest extends JUnitStories {
                         .withFormats(Format.CONSOLE, Format.TXT, Format.HTML, Format.XML, Format.STATS)
                         .withCrossReference(new CrossReference())
                         .withFailureTrace(true))
-                .useParameterConverters(new ParameterConverters()
+                .useParameterConverters(new ParameterConverters(new TableTransformers())
                         .addConverters(new ParameterConverters.DateConverter(new SimpleDateFormat("yyyy-MM-dd"))))
                 .useStoryParser(new GherkinStoryParser())
                 .useStepMonitor(new SilentStepMonitor()));
