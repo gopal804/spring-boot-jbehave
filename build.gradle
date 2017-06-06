@@ -21,13 +21,13 @@ repositories {
 		mavenCentral()
 }
 
-
+　
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator') 
 	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.jbehave:jbehave-core:4.0.4')
-	compile('org.jbehave:jbehave-spring:4.0.4')
-	compile('org.jbehave:jbehave-gherkin:4.0.4')
+	compile('org.jbehave:jbehave-core:4.1.1')
+	compile('org.jbehave:jbehave-spring:4.1.1')
+	compile('org.jbehave:jbehave-gherkin:4.1.1')
 	
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
